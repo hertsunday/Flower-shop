@@ -1,0 +1,269 @@
+.header {
+  display: flex;
+  justify-content: center;
+  height: 80px;
+  background-color: hotpink;
+
+  &-center {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1550px;
+    padding: 0 15px;
+  }
+
+  &__menu-button {
+    width: 44px;
+    height: 44px;
+    padding-top: 6px;
+    border-radius: 8px;
+    transition: background-color .3s;
+    box-sizing: border-box;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #ffa1d0;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  &__logo-image {
+    width: 66px;
+    height: 66px;
+    margin-right: 10px;
+  }
+
+  &__logo-name {
+    display: inline-block;
+    font-size: 40px;
+    font-weight: 1000;
+    text-shadow: 3px 3px 0 black;
+    color: white;
+  }
+
+  &__catalog {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 146px;
+    height: 44px;
+    border-radius: 5px;
+    background-color: #ffa1d0;
+    transition: background-color .3s;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #ffbadd;
+    }
+  }
+
+  &__search {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: calc(100% - 740px);
+    height: 44px;
+    border-radius: 5px;
+    background-color: white;
+
+    &-user {
+      width: calc(100% - 680px);
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 164px;
+    height: 44px;
+
+    &-user {
+      width: 104px;
+    }
+  }
+
+  &__buttons--svg {
+    width: 26px;
+    height: 26px;
+    filter: invert(1);
+
+    &-user {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  &__buttons--svg-list {
+    width: 16px;
+    height: 16px;
+    margin-top: 4px;
+    filter: invert(1);
+  }
+
+  &__my-orders, &__wish-list, &__shopping-cart, &__user-register {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 100%;
+    border-radius: 6px;
+    transition: background-color .3s;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #ffa1d0;
+    }
+  }
+
+  &__my-orders--border {
+    width: 20px;
+    height: 20px;
+    border: 2px solid white;
+    border-radius: 4px;
+  }
+}
+
+.menu-button {
+  &__lines {
+    height: 3px;
+    margin: 6px 9px;
+    background-color: white;
+    border-radius: 10px;
+  }
+}
+
+.catalog {
+  &__svg {
+    width: 24px;
+    height: 24px;
+
+    &--front {
+      filter: invert(1);
+      position: relative;
+      right: 1px;
+      bottom: 29px;
+    }
+  }
+
+  &__name {
+    margin-bottom: 2px;
+    margin-right: 2px;
+    color: white;
+    font-family: Bahnschrift;
+    font-weight: 600;
+    font-size: 24px;
+    text-shadow: 1px 1px 0 black;
+  }
+}
+
+.search {
+  &__input {
+    width: calc(100% - 90px);
+    height: 100%;
+    padding: 0 5px 0 10px;
+    border: 0;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    font-size: 18px;
+    outline: none;
+  }
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90px;
+    height: 100%;
+    border: 0;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    font-size: 18px;
+    color: white;
+    background-color: #c4307a;
+    cursor: pointer;
+    transition: background-color .3s;
+
+    &:hover {
+      background-color: #de408f;
+    }
+
+    &--hidden {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .header {
+    &__logo-image {
+      display: none;
+    }
+    &__search {
+      width: calc(100% - 740px + 66px);
+
+      &-user {
+        width: calc(100% - 680px + 66px);
+      }
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .header {
+    &__logo {
+      display: none;
+    }
+    &__search {
+      width: calc(100% - 740px + 66px + 240px);
+
+      &-user {
+        width: calc(100% - 680px + 66px + 240px);
+      }
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .header {
+    &__catalog {
+      display: none;
+    }
+    &__search {
+      width: calc(100% - 740px + 66px + 240px + 170px);
+
+      &-user {
+        width: calc(100% - 680px + 66px + 240px + 170px);
+      }
+    }
+  }
+  .search {
+    &__button {
+      display: none;
+    }
+    &__input {
+      width: 100%;
+      border-radius: 5px;
+    }
+  }
+}
+
+@media (max-width: 360px) {
+  .header__search {
+    display: none;
+  }
+}
+
+@media (max-width: 190px) {
+  .header {
+    &__menu-button {
+      display: none;
+    }
+    &-center {
+      justify-content: center;
+    }
+  }
+}
