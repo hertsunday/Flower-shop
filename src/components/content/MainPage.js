@@ -1,17 +1,26 @@
 import RightArrow from "./svg/RightArrow.svg";
 import LeftArrow from "./svg/LeftArrow.svg";
+import CheckMark from "./svg/CheckMark.svg";
+import Plant from "./svg/Plant.svg";
+import Bag from "./svg/Bag.svg";
+import Percentage from "./svg/Percentage.svg";
 import {useRef, useState, useEffect} from "react";
+import {catalogLabelEnum, catalogOrderEnum} from "../enum";
+import * as menuConstants from "../menuConstants";
 
 const imageList = [1, 2, 3, 4, 5, 6, 7, 8];
-const catalog = ['Цибулини квітів','Саджанці багаторічників','Саджанці плодових','Саджанці дерев','Саджанці хвойних рослин','Саджанці кущів','Саджанці троянд','Ґрунтопокривні рослини','Кімнатні рослини','Насіння','Садовий інвентар','Новорічні прикраси'];
-const hotSaleTitle = ['Тюльпани','Нарциси','Мускарі','Троянди','Алліум','Лілейники','Півонії']
-
+const hotSaleTitle = ['Тюльпани','Нарциси','Мускарі','Троянди','Алліум','Лілейники','Півонії'];
+const guaranteeTitles = ['Купуючи у нас, Ви нічим не ризикуєте\nЧесна гарантія повернення коштів',
+                        'Високі європейські стандарти\nРетельна перевірка кожної рослини',
+                        'Новітня система зберігання\nБезпечна та швидка доставка',
+                        'Економія ваших коштів\nГрошові бонуси з кожної покупки'];
+const guaranteesSvg = [CheckMark, Plant, Bag, Percentage];
 
 function MainPage(){
     const pictureHolder = useRef(null);
     const buttonLeftArrow = useRef(null);
     const buttonRightArrow = useRef(null);
-    const [countImage, setCountImage] = useState(0)
+    const [countImage, setCountImage] = useState(0);
 
     const handleClick = (direction) => {
         return () => {
@@ -32,8 +41,9 @@ function MainPage(){
     return (
         <div className="content__main-page">
             <div className="main-page__first-container main-page__margin">
-                <ul className="first-container__catalog-categories--start">
-                    {catalog.map(el => <li className="catalog-categories__item">{el}</li>)}
+                <ul>
+                    {Object.values(menuConstants).sort((a, b) => catalogOrderEnum[a] - catalogOrderEnum[b])
+                        .map(el => <li className="catalog-categories__item">{catalogLabelEnum[el]}</li>)}
                 </ul>
                 <div className="first-container__ads">
                     {!(countImage === 0) && <button className="main-slider__control main-slider__control--prev" ref={buttonLeftArrow} onClick={handleClick('left')} disabled={countImage === 0}>
@@ -58,7 +68,14 @@ function MainPage(){
             </div>
             <div className="main-page__third-container main-page__margin">
                 <span className="guarantees__title">Гарантії надійності від КВІТОЧКИ</span>
-                <div className="guarantees__holder"></div>
+                <div className="guarantees__holder">
+                    {guaranteeTitles.map((el ,index) =>
+                        <div className={`guarantees__item guarantees__item--${index}`}>
+                            <img className="guarantees--svg" src={guaranteesSvg[index]} alt="guarantees"/>
+                            <div className="guarantees__item-title">{el}</div>
+                        </div>
+                    )}
+                </div>
             </div>
         </div>
     );

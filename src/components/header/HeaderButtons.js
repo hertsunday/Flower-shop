@@ -3,11 +3,9 @@ import WishList from "./svg/WishList.svg";
 import ShoppingCart from "./svg/ShoppingCart.svg";
 import User from "./svg/User.svg";
 import "./LogIn.scss";
-import {useRef, useState} from "react";
 
 function HeaderButtons({loggedIn, callLogInWindow}){
     let buttonsClass = "header__buttons";
-    const logInWindow = useRef(null)
 
     if (!loggedIn) {
         buttonsClass = "header__buttons header__buttons-user"

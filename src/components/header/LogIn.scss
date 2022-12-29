@@ -1,16 +1,10 @@
-.log-in, .registration {
+.log-in, .registration, .catalog-window {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 100%;
   z-index: 5;
-  opacity: 0;
-  transition: all .2s;
-
-  &:hover {
-    opacity: 1;
-  }
 }
 
 .fading {
@@ -20,6 +14,11 @@
   bottom: 0;
   background-color: black;
   opacity: .6;
+
+  &-catalog {
+    height: calc(100vh - 80px);
+    top: 80px;
+  }
 }
 
 .log-in-form {
