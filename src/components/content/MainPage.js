@@ -43,7 +43,7 @@ function MainPage(){
             <div className="main-page__first-container main-page__margin">
                 <ul>
                     {Object.values(menuConstants).sort((a, b) => catalogOrderEnum[a] - catalogOrderEnum[b])
-                        .map(el => <li className="catalog-categories__item">{catalogLabelEnum[el]}</li>)}
+                        .map(el => <li className="catalog-categories__item catalog-categories__width">{catalogLabelEnum[el]}</li>)}
                 </ul>
                 <div className="first-container__ads">
                     {!(countImage === 0) && <button className="main-slider__control main-slider__control--prev" ref={buttonLeftArrow} onClick={handleClick('left')} disabled={countImage === 0}>

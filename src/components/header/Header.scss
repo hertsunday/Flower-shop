@@ -39,7 +39,6 @@
   }
 
   &__logo-name {
-    display: inline-block;
     font-size: 40px;
     font-weight: 1000;
     text-shadow: 3px 3px 0 black;
@@ -142,11 +141,18 @@
     width: 24px;
     height: 24px;
 
-    &--front {
-      filter: invert(1);
+    &--front-block {
       position: relative;
       right: 1px;
       bottom: 29px;
+    }
+
+    &--front {
+      filter: brightness(250%);
+    }
+
+    &--back {
+      filter: brightness(0%);
     }
   }
 

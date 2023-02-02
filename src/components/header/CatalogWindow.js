@@ -1,9 +1,9 @@
 import "./CatalogWindow.scss";
-// import "../content/MainPage.scss";
+import "../content/MainPage.scss";
 import "./LogIn.scss";
-import {catalogLabelEnum, catalogOrderEnum, catalogWidthEnum, subCatalogEnum, subCatalogLabelEnum} from "../enum";
+import {catalogLabelEnum, catalogOrderEnum, subCatalogEnum, subCatalogLabelEnum} from "../enum";
 import * as menuConstants from "../menuConstants";
-import {useEffect, useRef, useState} from "react";
+import {useState} from "react";
 
 function CatalogWindow({openCatalog}){
     const [activeMenuItem, setActiveMenuItem] = useState("FLOWER_BULBS");

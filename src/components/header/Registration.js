@@ -1,7 +1,6 @@
 import "./LogIn.scss";
-import CloseLogIn from "./svg/CloseLogIn.svg"
-import {useRef, useState} from "react";
-import axios from "axios";
+import CloseLogIn from "./svg/CloseButton.svg"
+import {useState} from "react";
 
 const inputs = [{
         name: "name",
@@ -53,7 +52,6 @@ function Registration({callFormWindow, formSwitch, logIn}) {
                 callFormWindow()
                 logIn()
             }
-            //const response = await axios.post('/registration', form)
         }
     }
     const onChangeInput = (e) => {
@@ -65,7 +63,8 @@ function Registration({callFormWindow, formSwitch, logIn}) {
         <div className="registration">
             <div className="fading" onClick={callFormWindow}></div>
             <form className="registration-form" onSubmit={handleSubmit}>
-                <div className="log-in-form__title">Реєстрація
+                <div className="log-in-form__top">
+                    <span className="log-in-form__title">Реєстрація</span>
                     <div className="log-in-form__close-button" onClick={callFormWindow}>
                         <img className="log-in-form__close-button--svg" src={CloseLogIn} alt="Close log in form"/>
                     </div>

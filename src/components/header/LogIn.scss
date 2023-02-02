@@ -33,15 +33,21 @@
   box-shadow: 0 0 80px #1c1c1c;
   box-sizing: border-box;
 
-  &__title {
+  &__top {
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+
+  &__title {
     font-size: 30px;
     font-weight: 600;
   }
 
   &__close-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 30px;
     height: 30px;
     border-radius: 50%;
@@ -49,17 +55,17 @@
     cursor: pointer;
 
     &--svg {
-      width: 30px;
-      height: 30px;
+      width: 18px;
+      height: 18px;
       transition: all .2s;
-
-      &:hover {
-        filter: brightness(250%);
-      }
     }
 
     &:hover {
       background-color: hotpink;
+
+      .log-in-form__close-button--svg {
+        filter: brightness(250%);
+      }
     }
   }
 
