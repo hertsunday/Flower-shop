@@ -2,7 +2,16 @@ import "./Menu.scss";
 import LogoImage from "./svg/LogoImage.svg";
 import CloseLogIn from "./svg/CloseButton.svg";
 import QuestionMark from "./svg/QuestionMark.svg";
+import TelegramChat from "./svg/TelegramChat.svg";
+import PlayMarket from "./svg/PlayMarket.svg";
+import AppStore from "./svg/AppStore.svg";
+import Facebook from "./svg/Facebook.svg";
+import Twitter from "./svg/Twitter.svg";
+import YouTube from "./svg/YouTube.svg";
+import Instagram from "./svg/Instagram.svg";
+import Viber from "./svg/Viber.svg";
 import Telegram from "./svg/Telegram.svg";
+
 import {useEffect, useState} from "react";
 
 const initialClassname = "menu-holder__menu";
@@ -11,6 +20,7 @@ const withOpenedModifierClassname = "menu-holder__menu--opened";
 const closeDelay = 500;
 
 function Menu({openMenuButton}){
+    const socials = [Facebook, Twitter, YouTube, Instagram, Viber, Telegram];
     const [menuClassname, setMenuClassname] = useState("menu-holder__menu")
 
     useEffect(() => {
@@ -51,7 +61,7 @@ function Menu({openMenuButton}){
                         <span className="menu-content__item-name">Довідковий центр</span>
                     </div>
                     <div className="menu-content__item">
-                        <img className="menu-content__item-svg" src={Telegram} alt="Telegram icon"/>
+                        <img className="menu-content__item-svg" src={TelegramChat} alt="Telegram icon"/>
                         <span className="menu-content__item-name">Чат з КВІТОЧКА</span>
                     </div>
                     <div className="menu-content__title-name">Інформація про компанію</div>
@@ -79,6 +89,24 @@ function Menu({openMenuButton}){
                     </div>
                     <div className="menu-content__item">
                         <span className="menu-content__item-name">Повернення товару</span>
+                    </div>
+                    <div className="menu-content__title-name">Сервіси</div>
+                    <div className="menu-content__item">
+                        <span className="menu-content__item-name">Бонусний рахунок</span>
+                    </div>
+                    <div className="menu-content__item">
+                        <span className="menu-content__item-name">Подарункові сертифікати</span>
+                    </div>
+                    <div className="menu-content__title-name">Завантажуйте наш додаток</div>
+                    <div className="menu-content__app">
+                        <img className="menu-content__app-svg" src={PlayMarket} alt="Go to Play Market to download our app"/>
+                        <img className="menu-content__app-svg" src={AppStore} alt="Go to App Store to download our app"/>
+                    </div>
+                    <div className="menu-content__title-name">Ми в соціальних мережах</div>
+                    <div className="menu-content__app">
+                        {socials.map(el => (
+                            <img className="menu-content__socials-svg" src={el} alt="Go to our socials"/>
+                        ))}
                     </div>
                 </div>
             </div>

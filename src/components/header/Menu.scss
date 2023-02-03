@@ -32,6 +32,25 @@
     text-align: center;
     background-color: #ffd9ec;
 
+    &__app {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 40px;
+      margin: 10px;
+
+      &-svg {
+        height: 40px;
+        cursor: pointer;
+      }
+    }
+
+    &__socials-svg {
+      height: 36px;
+      width: 36px;
+      cursor: pointer;
+    }
+
     &__item {
       display: flex;
       align-items: center;
@@ -43,7 +62,7 @@
       cursor: pointer;
 
       &-top {
-        margin-top: 20px;
+        margin-top: 25px;
       }
 
       &:hover {
@@ -71,7 +90,7 @@
     }
 
     &__title-name {
-      margin-top: 35px;
+      margin-top: 30px;
       font-size: 17px;
       font-weight: 600;
     }
@@ -136,5 +155,9 @@
         left: 0;
       }
     }
+  }
+
+  &__socials-instagram {
+    background: linear-gradient(45deg,#ffb700 14.65%,#ff6800 31.68%,#cb217d 54.72%,#7e00aa 85.35%);
   }
 }
